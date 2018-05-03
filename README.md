@@ -11,7 +11,9 @@ wepy + MinUI
 2、执行
 
 ```
-npm install && yarn
+npm install 
+
+yarn
 
 wepy build --watch
 ```

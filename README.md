@@ -11,9 +11,9 @@ wepy + MinUI
 2、执行
 
 ```
-npm i && npm install && yarn
+npm install && yarn
 
-wepy build -w && wepy build --watch
+wepy build --watch
 ```
 
 3、在小程序开发工具内新建小程序，并将目录指向dist目录

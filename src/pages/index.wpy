@@ -1,0 +1,87 @@
+<style lang="less">
+  .index-logo {
+    width: 100rpx;
+    height: 100rpx;
+  }
+
+  .index-desc {
+    margin-top: 20rpx;
+    color: #888888;
+    font-size: 28rpx;
+  }
+
+  .line_main {
+    background-color: white;
+    padding: 10px 0;
+  }
+
+  .padding_line {
+    padding: 5px 0;
+  }
+
+</style>
+
+<template>
+  <veiw class="flex flex_column font_normal">
+    <view class="flex flex_column align_center margin_top">
+      <image class="index-logo" src="https://s10.mogucdn.com/mlcdn/c45406/171016_6d1e81fc4f85i4099hll34k8k2j77_356x356.png"></image>
+      <view class="index-desc">基于规范的小程序组件库，简洁、易用、工具化</view>
+      <view class="index-desc">配合wepy框架</view>
+    </view>
+    <view class="flex flex_column margin_left margin_right margin_top">
+      <repeat for="{{components}}" key="index" index="index" item="item">
+        <view class="flex align_center justify_between line_main margin_top">
+          <view class="margin_left color_green">
+            <text>{{item.title}}</text>
+          </view>
+          <view>
+          </view>
+        </view>
+        <view class="flex flex_column">
+          <repeat for="{{item.list}}" key="componentsindex" index="componentsindex" item="component">
+            <view class="flex justify_between bg_white padding_line" @tap="toComponent({{component}})">
+              <text class="margin_left">{{component}}</text>
+              <wxc-icon size="25" type="arrow-right" class="margin_right color_gray"></wxc-icon>
+            </view>
+          </repeat>
+        </view>
+      </repeat>
+    </view>
+  </veiw>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '非码点餐小程序',
+      usingComponents: {
+        'wxc-dialog': '../packages/@minui/wxc-dialog/dist/index',
+        'wxc-icon': '../packages/@minui/wxc-icon/dist/index'
+      }
+    }
+    data = {
+      components: [
+        {
+          title: '基础元件',
+          list: ['avatar', 'badge', 'elip', 'label', 'loadmore', 'price', 'progress']
+        }, {
+          title: '功能组件',
+          list: ['abnor', 'countdown', 'counter', 'loading', 'mask', 'steps', 'tab']
+        },
+        {
+          title: '提示反馈',
+          list: ['dialog', 'popup', 'toast']
+        }
+      ]
+    }
+    methods = {
+      toComponent(name) {
+        this.$navigate(`./${name}/${name}`);
+      }
+    }
+    onLoad() {}
+  }
+
+</script>

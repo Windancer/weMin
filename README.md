@@ -13,10 +13,9 @@ wepy + MinUI
 ```
 npm install 
 
-yarn
-
 wepy build --watch
 ```
+* 如果npm安装报错 可以尝试 yarn大法~
 
 3、在小程序开发工具内新建小程序，并将目录指向dist目录
 

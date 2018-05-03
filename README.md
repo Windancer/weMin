@@ -1,5 +1,5 @@
-# wepy-X-minui
-wepy with minui
+# weMin
+wepy + MinUI
 本项目仅供参考，如有疑问欢迎提issue，我会尽力解决。
 
 ## min-cli 1.0.7-beta.6, wepy 1.7.0
@@ -11,9 +11,9 @@ wepy with minui
 2、执行
 
 ```
-npm i 
+npm i && npm install && yarn
 
-wepy build -w
+wepy build -w && wepy build --watch
 ```
 
 3、在小程序开发工具内新建小程序，并将目录指向dist目录
@@ -54,4 +54,3 @@ $ min install @minui/wxc-loading
 
 4、在页面使用，this.$wxpage.selectComponent方法调用（详见index.wpy 以及 ![minui框架主页](https://github.com/meili/minui))
 
-<img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fm6xmveiqmj30k00zo76h.jpg" width="30%" height="30%">
